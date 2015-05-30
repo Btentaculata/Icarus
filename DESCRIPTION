@@ -1,0 +1,8 @@
+Package: Icarus
+Title: A Collection of Small Helpful Functions.
+Version: 0.0.1
+Authors: Matthew A. Rittenhouse
+Description: This package contains several small R functions that I have found helpful. 	     Hopefully they may be of use to fellow ecologists and general users. As the 	     package name implies, many functions found herein were quick attempts at 		     solving specific problems and may not hold up to ambitious users.
+Depends: R (>= 3.1.1)
+License: The Unlicense
+LazyData: true
