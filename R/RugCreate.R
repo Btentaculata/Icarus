@@ -12,10 +12,10 @@
 #' @examples
 #' RugCreate()
 
-RugCreate <- function(x, y, num.bins, xlab = "x", ylab = "y", xlim = c(min(x), max(x))){
+RugCreate <- function(x, y, num.bins, xlab = "x", ylab = "y", xlim = c(min(x), max(x)), pch = 1){
 
   model <- glm(y ~ x, family = binomial(link = "logit")) #This should be the same as your model
-  plot(x, y, xlab = xlab, ylab = ylab, xlim = xlim) #Plots points on a graph
+  plot(x, y, xlab = xlab, ylab = ylab, xlim = xlim, pch = pch) #Plots points on a graph
 
   #rug() creates a series of tick marks at each point. Successes connect to top.  Failures to bottom.
   for(i in 1:length(x)){
