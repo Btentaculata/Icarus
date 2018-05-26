@@ -18,7 +18,7 @@ RugCreate <- function(x, y, num.bins){
   for(i in 1:length(x)){
     if(y[i] == 1){
       rug(x[i], side = 3)
-    } else {rug(x[j], side = 1)
+    } else {rug(x[i], side = 1)
     	}
     }
 
