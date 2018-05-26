@@ -4,15 +4,18 @@
 #' @param x: Your independent variable.  Only GLMs with 1 independent variable are supported
 #' @param y: Your dependent variable.
 #' @param num.bins: The number of bins to break your data into
+#' @param xlab: Label for X axis
+#' @param ylab: Label for Y axis
+#' @param xlim: Two value vector of x axis start and stop
 #' @keywords GLM Binomial Icarus
 #' @export
 #' @examples
 #' RugCreate()
 
-RugCreate <- function(x, y, num.bins){
+RugCreate <- function(x, y, num.bins, xlab = "x", ylab = "y", xlim = c(min(x), max(x))){
 
-  model<-glm(y~x, family = binomial(link = "logit")) #This should be the same as your model
-  plot(x, y) #Plots points on a graph
+  model <- glm(y ~ x, family = binomial(link = "logit")) #This should be the same as your model
+  plot(x, y, xlab = xlab, ylab = ylab, xlim = xlim) #Plots points on a graph
 
   #rug() creates a series of tick marks at each point. Successes connect to top.  Failures to bottom.
   for(i in 1:length(x)){
