@@ -12,7 +12,14 @@
 #' @examples
 #' RugCreate()
 
-RugCreate <- function(x, y, num.bins, xlab = "x", ylab = "y", xlim = c(min(x), max(x)), pch = 1){
+RugCreate <- function(x, 
+                      y, 
+                      num.bins, 
+                      xlab = "x", 
+                      ylab = "y", 
+                      xlim = c(min(x), max(x)), 
+                      pch = 1,
+                      plot.model = TRUE){
 
   model <- glm(y ~ x, family = binomial(link = "logit")) #This should be the same as your model
   plot(x, y, xlab = xlab, ylab = ylab, xlim = xlim, pch = pch) #Plots points on a graph
@@ -28,7 +35,7 @@ RugCreate <- function(x, y, num.bins, xlab = "x", ylab = "y", xlim = c(min(x), m
   #Plots your model's predicted probabilities as a line
   xv <- seq(from = min(x), to = max(x), length.out = length(y))
   yv <- predict(model, list(length = xv), type = "response")
-  lines(xv, yv)
+  if(plot.model = TRUE){lines(xv, yv)}
 
   #Breaks your data into bins and finds the mean probabilities of each bin
   cutl <- cut(x, num.bins)
