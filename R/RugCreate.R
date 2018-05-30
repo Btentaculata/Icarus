@@ -35,7 +35,7 @@ RugCreate <- function(x,
   #Plots your model's predicted probabilities as a line
   xv <- seq(from = min(x), to = max(x), length.out = length(y))
   yv <- predict(model, list(length = xv), type = "response")
-  if(plot.model = TRUE){lines(xv, yv)}
+  if(plot.model == TRUE){lines(xv, yv)}
 
   #Breaks your data into bins and finds the mean probabilities of each bin
   cutl <- cut(x, num.bins)
